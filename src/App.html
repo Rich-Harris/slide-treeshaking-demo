@@ -1,0 +1,25 @@
+{#if visible}
+	<h1 in:slide>Hello {name}!</h1>
+{/if}
+
+<style>
+	h1 {
+		color: purple;
+	}
+</style>
+
+<script>
+	import { slide } from 'svelte-transitions';
+
+	export default {
+		transitions: {
+			slide
+		},
+
+		oncreate() {
+			setTimeout(() => {
+				this.set({ visible: true });
+			}, 1000);
+		}
+	};
+</script>
